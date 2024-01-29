@@ -5,7 +5,11 @@ document.addEventListener("DOMContentLoaded", function () {
   const currentUser = JSON.parse(localStorage.getItem("currentUser"));
 
   if (currentUser) {
-    window.location.href = "/webpage.html";
+    const newPath = "/webpage.html";
+    let newUrl = currentPath.replace(/\/$/, "") + newPath;
+    newUrl = newUrl.replace("/index.html", "");
+    //console.log(newUrl);
+    window.location.href = newUrl;
   }
 
   const handleLogin = (user) => {
@@ -16,7 +20,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const newPath = "/webpage.html";
     let newUrl = currentPath.replace(/\/$/, "") + newPath;
     newUrl = newUrl.replace("/index.html", "");
-    console.log(newUrl);
+    //console.log(newUrl);
     window.location.href = newUrl;
   };
 
